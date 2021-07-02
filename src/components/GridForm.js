@@ -11,9 +11,12 @@ export const GridForm = (props) => {
   const setInit = () => {
     setTitle("");
     setDescription("");
-    setPrice(0);
-    setQuantity(0);
+    setPrice('');
+    setQuantity('');
     setImgUrl("");
+    Array.from(document.querySelectorAll("input")).forEach(
+      input => (input.value = "")
+    );
   };
 
   console.log(typeof products);
@@ -27,9 +30,10 @@ export const GridForm = (props) => {
       imgUrl,
     };
 
-    setProducts((prev) => ({
-      products: [...prev, model],
-    }));
+    setProducts((prev) => ([
+      ...prev,
+        model,
+    ]));
   };
 
   const handleSumit = (e) => {
@@ -92,6 +96,7 @@ export const GridForm = (props) => {
           />
         </label>
         <button>Submit</button>
+
       </form>
     </div>
   );
