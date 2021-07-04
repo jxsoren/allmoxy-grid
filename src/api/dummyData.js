@@ -1,5 +1,8 @@
+const { v4: uuidv4 } = require('uuid');
+
 export const dummyData = [
   {
+    id: uuidv4(),
     title: "Tennis Ball",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Magna sit amet purus gravida. Ut diam quam nulla porttitor massa id neque aliquam. Tortor dignissim convallis aenean et tortor at. Pharetra sit amet aliquam id diam. Sed lectus vestibulum mattis ullamcorper velit sed.",
@@ -10,6 +13,7 @@ export const dummyData = [
   },
 
   {
+    id: uuidv4(),
     title: "Banana",
     description:
       "Magna ac placerat vestibulum lectus mauris ultrices eros. Tellus pellentesque eu tincidunt tortor aliquam nulla facilisi cras fermentum. Ultrices in iaculis nunc sed augue lacus viverra. Cursus sit amet dictum sit amet justo. Faucibus et molestie ac feugiat. Porta lorem mollis aliquam ut porttitor leo a diam. Vulputate enim nulla aliquet porttitor lacus. Enim lobortis scelerisque fermentum dui faucibus in ornare quam viverra.",
@@ -20,6 +24,7 @@ export const dummyData = [
   },
 
   {
+    id: uuidv4(),
     title: "Chip",
     description:
       "Nibh tortor id aliquet lectus proin nibh nisl condimentum. Aliquet sagittis id consectetur purus ut faucibus. Suspendisse in est ante in nibh mauris cursus mattis. Maecenas accumsan lacus vel facilisis volutpat est. Tristique nulla aliquet enim tortor. Rhoncus est pellentesque elit ullamcorper dignissim cras tincidunt lobortis feugiat.",
@@ -30,6 +35,7 @@ export const dummyData = [
   },
 
   {
+    id: uuidv4(),
     title: "Candy Corn",
     description:
       "Et malesuada fames ac turpis egestas maecenas pharetra convallis. Egestas maecenas pharetra convallis posuere morbi. Orci ac auctor augue mauris augue neque gravida. Orci sagittis eu volutpat odio facilisis mauris sit.",
@@ -39,6 +45,7 @@ export const dummyData = [
   },
 
   {
+    id: uuidv4(),
     title: "Monty Python and The Holy Grail Blu Ray DVD",
     description:
       "Felis eget nunc lobortis mattis aliquam faucibus purus. Nibh mauris cursus mattis molestie a. Et leo duis ut diam quam nulla porttitor massa. Faucibus vitae aliquet nec ullamcorper sit amet risus. Nec sagittis aliquam malesuada bibendum arcu vitae elementum curabitur. Aenean sed adipiscing diam donec adipiscing tristique. Nisi est sit amet facilisis magna.",
@@ -48,3 +55,4 @@ export const dummyData = [
       "https://images-na.ssl-images-amazon.com/images/I/81y8glcFBdL._SL1500_.jpg",
   },
 ];
+

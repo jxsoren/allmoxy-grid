@@ -1,56 +1,51 @@
 import React, { useState } from "react";
-const initOptions = {
-  value: "",
-};
+import { Product } from "../components/Product.js";
+import "../styles.css";
 
 export const Grid = (props) => {
-  const [sorter, setSorter] = useState(initOptions);
-  const { products, setProducts } = props;
+  const {
+    products,
+    setProducts,
+    toggleEdit,
+    setToggleEdit,
+    sorter,
+    handleSelect,
+    updateState
+  } = props;
 
-  const handleSelect = (e) => {
-    setSorter({
-      value: e.target.value,
-    });
-    console.log(sorter);
+  const testIndex = (index, updates) => {
+    const newState = [...products];
+    newState[index] = updates;
+    console.log(newState);
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-  };
-
-  const deleteButton = (e) => {
-    e.target.indexOf();
-  };
-
-  console.log([...products])
   const deleteIndex = (index) => {
     const newDataState = [...products];
     newDataState.splice(index, 1);
-
-    setProducts(() => ([...newDataState]));
+    setProducts(() => [...newDataState]);
   };
 
-  console.log(props.products);
-  const allProducts = props.products.map((p, index) => (
-    <ul className="grid" key={index}>
-      <li>{p.title}</li>
-      <li>{p.description}</li>
-      <li>{p.price}</li>
-      <li>{p.quantity}</li>
-      <li>
-        <img height={"64px"} width={"60px"} src={p.imgUrl} alt={p.imgUrl} />
-      </li>
-      <hr />
-      <button onClick={() => deleteIndex(index)}>Delete</button>
-    </ul>
+  const allProducts = products.map((item, index) => (
+    <Product
+      key={item.id}
+      index={index}
+      setToggleEdit={setToggleEdit}
+      toggleEdit={toggleEdit}
+      deleteIndex={deleteIndex}
+      testIndex={testIndex}
+      updateState={updateState}
+      {...item}
+    />
   ));
+
+  // Sorting
   return (
     <div>
       <form>
         <label>
           Sort By:
           <select value={sorter.value} onChange={handleSelect}>
-            <option value={""}>------------------------</option>
+            <option value={"-"}>------------------------</option>
             <option value={"A_Z"}>Alphabetically A-Z</option>
             <option value={"Z_A"}>Alphabetically Z-A</option>
             <option value={"$$$_$"}>Price $$$-$</option>
